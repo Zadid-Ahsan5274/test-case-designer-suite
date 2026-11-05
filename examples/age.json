@@ -1,0 +1,23 @@
+{
+  "name": "Age field",
+  "prefix": "TC-AGE",
+  "bva_mode": "3-value",
+  "strategy": "vary_one",
+  "fields": [
+    {
+      "name": "Age",
+      "type": "int",
+      "min": 18,
+      "max": 60,
+      "step": null,
+      "allowed": [],
+      "required": true,
+      "on_invalid": "Reject with error"
+    }
+  ],
+  "conditions": [],
+  "actions": [],
+  "action_map": {},
+  "constraints": [],
+  "version": 1
+}

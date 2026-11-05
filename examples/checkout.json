@@ -1,0 +1,212 @@
+{
+  "name": "Checkout",
+  "prefix": "TC-CHK",
+  "bva_mode": "3-value",
+  "strategy": "vary_one",
+  "fields": [],
+  "conditions": [
+    {
+      "name": "User type",
+      "values": [
+        "Guest",
+        "Member",
+        "Admin"
+      ]
+    },
+    {
+      "name": "Payment",
+      "values": [
+        "Card",
+        "Wallet",
+        "Cash on delivery"
+      ]
+    },
+    {
+      "name": "Destination",
+      "values": [
+        "Domestic",
+        "International"
+      ]
+    },
+    {
+      "name": "Coupon",
+      "values": [
+        "None",
+        "Valid",
+        "Expired"
+      ]
+    }
+  ],
+  "actions": [
+    "Order placed",
+    "Order placed with discount",
+    "Payment method rejected",
+    "Coupon rejected"
+  ],
+  "action_map": {
+    "[\"Guest\", \"Card\", \"Domestic\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Guest\", \"Card\", \"Domestic\", \"Valid\"]": [
+      "Order placed"
+    ],
+    "[\"Guest\", \"Card\", \"Domestic\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Guest\", \"Card\", \"International\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Guest\", \"Card\", \"International\", \"Valid\"]": [
+      "Order placed"
+    ],
+    "[\"Guest\", \"Card\", \"International\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Guest\", \"Wallet\", \"Domestic\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Guest\", \"Wallet\", \"Domestic\", \"Valid\"]": [
+      "Order placed"
+    ],
+    "[\"Guest\", \"Wallet\", \"Domestic\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Guest\", \"Wallet\", \"International\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Guest\", \"Wallet\", \"International\", \"Valid\"]": [
+      "Order placed"
+    ],
+    "[\"Guest\", \"Wallet\", \"International\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Guest\", \"Cash on delivery\", \"Domestic\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Guest\", \"Cash on delivery\", \"Domestic\", \"Valid\"]": [
+      "Order placed"
+    ],
+    "[\"Guest\", \"Cash on delivery\", \"Domestic\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Guest\", \"Cash on delivery\", \"International\", \"None\"]": [
+      "Payment method rejected"
+    ],
+    "[\"Guest\", \"Cash on delivery\", \"International\", \"Valid\"]": [
+      "Payment method rejected"
+    ],
+    "[\"Guest\", \"Cash on delivery\", \"International\", \"Expired\"]": [
+      "Payment method rejected"
+    ],
+    "[\"Member\", \"Card\", \"Domestic\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Member\", \"Card\", \"Domestic\", \"Valid\"]": [
+      "Order placed with discount"
+    ],
+    "[\"Member\", \"Card\", \"Domestic\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Member\", \"Card\", \"International\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Member\", \"Card\", \"International\", \"Valid\"]": [
+      "Order placed with discount"
+    ],
+    "[\"Member\", \"Card\", \"International\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Member\", \"Wallet\", \"Domestic\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Member\", \"Wallet\", \"Domestic\", \"Valid\"]": [
+      "Order placed with discount"
+    ],
+    "[\"Member\", \"Wallet\", \"Domestic\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Member\", \"Wallet\", \"International\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Member\", \"Wallet\", \"International\", \"Valid\"]": [
+      "Order placed with discount"
+    ],
+    "[\"Member\", \"Wallet\", \"International\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Member\", \"Cash on delivery\", \"Domestic\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Member\", \"Cash on delivery\", \"Domestic\", \"Valid\"]": [
+      "Order placed with discount"
+    ],
+    "[\"Member\", \"Cash on delivery\", \"Domestic\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Member\", \"Cash on delivery\", \"International\", \"None\"]": [
+      "Payment method rejected"
+    ],
+    "[\"Member\", \"Cash on delivery\", \"International\", \"Valid\"]": [
+      "Payment method rejected"
+    ],
+    "[\"Member\", \"Cash on delivery\", \"International\", \"Expired\"]": [
+      "Payment method rejected"
+    ],
+    "[\"Admin\", \"Card\", \"Domestic\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Admin\", \"Card\", \"Domestic\", \"Valid\"]": [
+      "Order placed with discount"
+    ],
+    "[\"Admin\", \"Card\", \"Domestic\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Admin\", \"Card\", \"International\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Admin\", \"Card\", \"International\", \"Valid\"]": [
+      "Order placed with discount"
+    ],
+    "[\"Admin\", \"Card\", \"International\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Admin\", \"Wallet\", \"Domestic\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Admin\", \"Wallet\", \"Domestic\", \"Valid\"]": [
+      "Order placed with discount"
+    ],
+    "[\"Admin\", \"Wallet\", \"Domestic\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Admin\", \"Wallet\", \"International\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Admin\", \"Wallet\", \"International\", \"Valid\"]": [
+      "Order placed with discount"
+    ],
+    "[\"Admin\", \"Wallet\", \"International\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Admin\", \"Cash on delivery\", \"Domestic\", \"None\"]": [
+      "Order placed"
+    ],
+    "[\"Admin\", \"Cash on delivery\", \"Domestic\", \"Valid\"]": [
+      "Order placed with discount"
+    ],
+    "[\"Admin\", \"Cash on delivery\", \"Domestic\", \"Expired\"]": [
+      "Coupon rejected"
+    ],
+    "[\"Admin\", \"Cash on delivery\", \"International\", \"None\"]": [
+      "Payment method rejected"
+    ],
+    "[\"Admin\", \"Cash on delivery\", \"International\", \"Valid\"]": [
+      "Payment method rejected"
+    ],
+    "[\"Admin\", \"Cash on delivery\", \"International\", \"Expired\"]": [
+      "Payment method rejected"
+    ]
+  },
+  "constraints": [],
+  "version": 1
+}

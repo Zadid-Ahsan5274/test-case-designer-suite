@@ -1,0 +1,95 @@
+{
+  "name": "Login",
+  "prefix": "TC-LOGIN",
+  "bva_mode": "3-value",
+  "strategy": "vary_one",
+  "fields": [],
+  "conditions": [
+    {
+      "name": "Username valid",
+      "values": [
+        "Y",
+        "N"
+      ]
+    },
+    {
+      "name": "Password valid",
+      "values": [
+        "Y",
+        "N"
+      ]
+    },
+    {
+      "name": "Account locked",
+      "values": [
+        "Y",
+        "N"
+      ]
+    },
+    {
+      "name": "Captcha solved",
+      "values": [
+        "Y",
+        "N"
+      ]
+    }
+  ],
+  "actions": [
+    "Login success",
+    "Invalid credentials error",
+    "Account locked message",
+    "Captcha error"
+  ],
+  "action_map": {
+    "[\"Y\", \"Y\", \"Y\", \"Y\"]": [
+      "Account locked message"
+    ],
+    "[\"Y\", \"Y\", \"Y\", \"N\"]": [
+      "Account locked message"
+    ],
+    "[\"Y\", \"Y\", \"N\", \"Y\"]": [
+      "Login success"
+    ],
+    "[\"Y\", \"Y\", \"N\", \"N\"]": [
+      "Captcha error"
+    ],
+    "[\"Y\", \"N\", \"Y\", \"Y\"]": [
+      "Account locked message"
+    ],
+    "[\"Y\", \"N\", \"Y\", \"N\"]": [
+      "Account locked message"
+    ],
+    "[\"Y\", \"N\", \"N\", \"Y\"]": [
+      "Invalid credentials error"
+    ],
+    "[\"Y\", \"N\", \"N\", \"N\"]": [
+      "Captcha error"
+    ],
+    "[\"N\", \"Y\", \"Y\", \"Y\"]": [
+      "Account locked message"
+    ],
+    "[\"N\", \"Y\", \"Y\", \"N\"]": [
+      "Account locked message"
+    ],
+    "[\"N\", \"Y\", \"N\", \"Y\"]": [
+      "Invalid credentials error"
+    ],
+    "[\"N\", \"Y\", \"N\", \"N\"]": [
+      "Captcha error"
+    ],
+    "[\"N\", \"N\", \"Y\", \"Y\"]": [
+      "Account locked message"
+    ],
+    "[\"N\", \"N\", \"Y\", \"N\"]": [
+      "Account locked message"
+    ],
+    "[\"N\", \"N\", \"N\", \"Y\"]": [
+      "Invalid credentials error"
+    ],
+    "[\"N\", \"N\", \"N\", \"N\"]": [
+      "Captcha error"
+    ]
+  },
+  "constraints": [],
+  "version": 1
+}
